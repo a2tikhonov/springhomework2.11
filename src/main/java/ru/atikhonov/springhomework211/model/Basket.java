@@ -3,20 +3,19 @@ package ru.atikhonov.springhomework211.model;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Component
 @SessionScope
 public class Basket {
-    private final List<Integer> basket;
+    private final ArrayList<Integer> basket;
 
     public Basket() {
-        this.basket = new LinkedList<>();
+        this.basket = new ArrayList<>();
     }
 
-    public void setBasket(Integer id) {
-        this.basket.add(id);
+    public void setBasket(Integer[] items) {
+        this.basket.addAll(Arrays.asList(items));
     }
 
     public List<Integer> getBasket() {

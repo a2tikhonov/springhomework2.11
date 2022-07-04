@@ -13,9 +13,10 @@ public class BasketServiceImpl {
         this.basket = basket;
     }
 
-    public void add(Integer id) {
-        this.basket.setBasket(id);
+    public void add(Integer[] items) {
+        this.basket.setBasket(items);
     }
+
 
     public List<Integer> get() {
         return List.copyOf(basket.getBasket());
