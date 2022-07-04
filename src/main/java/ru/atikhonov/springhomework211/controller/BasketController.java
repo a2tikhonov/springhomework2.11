@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.atikhonov.springhomework211.model.Basket;
 import ru.atikhonov.springhomework211.service.BasketServiceImpl;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/order")
 public class BasketController {
@@ -23,7 +25,7 @@ public class BasketController {
     }
 
     @GetMapping("/get")
-    public Basket get() {
+    public List<Integer> get() {
         return basketService.get();
     }
 }

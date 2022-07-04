@@ -1,22 +1,25 @@
 package ru.atikhonov.springhomework211.model;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.LinkedList;
 import java.util.List;
 
 @Component
-@Scope("session")
+@SessionScope
 public class Basket {
-    private List<Integer> basket;
+    private final List<Integer> basket;
 
     public Basket() {
-        this.basket = new LinkedList<Integer>();
+        this.basket = new LinkedList<>();
     }
 
     public void setBasket(Integer id) {
         this.basket.add(id);
     }
 
+    public List<Integer> getBasket() {
+        return basket;
+    }
 }

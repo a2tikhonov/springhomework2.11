@@ -3,6 +3,8 @@ package ru.atikhonov.springhomework211.service;
 import org.springframework.stereotype.Service;
 import ru.atikhonov.springhomework211.model.Basket;
 
+import java.util.List;
+
 @Service
 public class BasketServiceImpl {
     private final Basket basket;
@@ -15,8 +17,8 @@ public class BasketServiceImpl {
         this.basket.setBasket(id);
     }
 
-    public Basket get() {
-        return basket;
+    public List<Integer> get() {
+        return List.copyOf(basket.getBasket());
     }
 
 }
